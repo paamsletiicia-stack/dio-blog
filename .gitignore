@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# Poetry
+poetry.lock
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Arquivos de configuração do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Arquivos de ambiente
+.env
+.env.*
+
+# Cache e testes
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Build / distribuição
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# SQLite
+*.sqlite3
+*.db
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Uvicorn / FastAPI
+*.pid
+
+# Arquivos do Python Env
+.python-version
