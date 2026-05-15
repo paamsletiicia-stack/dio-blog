@@ -1,14 +1,14 @@
-from typing import Annotated
 from datetime import UTC, datetime
+from typing import Annotated
 
 from fastapi import Cookie, Header, Response, status, APIRouter
 
 from schemas.post import PostIn
 from views.post import PostOut
 
-from main import app
 
-router = APIRouter()
+
+router = APIRouter(prefix="/posts")
 
 
 # class Post(BaseModel):
@@ -31,7 +31,7 @@ fake_db = [
 
 ]
 
-@router.post('/posts/', status_code=status.HTTP_201_CREATED, response_model=PostOut)
+@router.post('/', status_code=status.HTTP_201_CREATED, response_model=PostOut)
 def create_post(post: PostIn):
     fake_db.append(post.model_dump())
     # .model_dump() vai retornar a representação desta classe em um dicionario
@@ -39,13 +39,13 @@ def create_post(post: PostIn):
 
 
 
-@router.post('/posts/', status_code=status.HTTP_201_CREATED)
+@router.post('/', status_code=status.HTTP_201_CREATED)
 def create_post(post: Post):
     fake_db.append(post.model_dump())
     # .model_dump() vai retornar a representação desta classe em um dicionario
     return post
 
-@router.get("/posts/", response_model=list[PostOut])
+@router.get("/", response_model=list[PostOut])
 def read_post(response:Response ,published: bool, limit: int, skip: int = 0, ads_id: Annotated[str | None, Cookie()] = None,
               user_agent: Annotated[str | None, Header()] = None ,):
     response.set_cookie(key="user", value="Pam@hotmail.com")
