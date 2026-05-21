@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../controllers"
+		},
+		{
+			"path": "../models"
+		},
+		{
+			"path": "../schemas"
+		},
+		{
+			"path": "../services"
+		},
+		{
+			"path": "../views"
+		},
+		{
+			"path": "../__pycache__"
+		},
+		{
+			"path": "../.vscode"
+		},
+		{
+			"path": "../../.venv/Lib"
+		}
+	],
+	"settings": {}
+}

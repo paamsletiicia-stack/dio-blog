@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-from datetime import UTC, datetime
+from datetime import datetime
 from pydantic import BaseModel
 
 
 class PostIn(BaseModel):
     title: str
     content: str
-    date: datetime = datetime.now(UTC)
+    published_at: datetime| None = None
     published: bool = False
